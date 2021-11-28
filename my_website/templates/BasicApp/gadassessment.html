@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GAD Assessment</title>
+    <style>
+      h1{
+        text-align: center;
+        font-size: 2em;
+      }
+      .gad_form{
+        margin: 15px;
+      }
+      .links{
+        margin: 15px;
+      }
+
+    </style>
+  </head>
+  
+  <h1>GAD Assessment</h1>
+  <body>
+  <div class = "gad_form">
+    <form method="POST" name = "gad_assessment">
+      {{form.as_p}}
+      {% csrf_token %}
+  <p>The statements below inquire about your behavior and emotions for a certain period of time. Consider each question carefully.
+     Then indicate whether the question is generally true or false for you.</p>
+
+     <div class="assessment" id = "c1">
+     1. Have you experienced excessive anxiety or worry more days than not during the last 6 months?
+                 <input type="radio" id = "answer_1"	name="c1"  value="Yes">
+                 <label for "Yes"> Yes </label>
+                 <input type="radio" id = "answer_2" name="c1"  value="No">
+                 <label for "No"> No </label>
+                 <input type ="radio" id = "answer_3" name="c1" value="Unsure">
+                 <label for "Unsure">Not sure</label><br>
+     </div>
+
+     <div class="assessment" id = "c2">
+     2. Do you feel it difficult to control the worry?
+                 <input type="radio" id = "answer_4"	name="c2"  value="Yes">
+                 <label for "Yes"> Yes </label>
+                 <input type="radio" id = "answer_5" name="c2"  value="No">
+                 <label for "No"> No </label>
+                 <input type ="radio" id = "answer_6" name="c2" value="Unsure">
+                 <label for "Unsure">Not sure</label><br>
+     </div>
+
+     <div class="assessment" id = "c3">
+     3. Have you experienced three or more of the following symptoms more days than not over the last 6 months: restlessness, easily fatigued, irritability, muscle tension, or sleep disturbance?
+                 <input type="radio" id = "answer_7"	name="c3"  value="Yes">
+                 <label for "Yes"> Yes </label>
+                 <input type="radio" id = "answer_8" name="c3"  value="No">
+                 <label for "No"> No </label>
+                 <input type ="radio" id = "answer_9" name="c3" value="Unsure">
+                 <label for "Unsure">Not sure</label><br><br>
+     </div>
+
+<div id = "usersResponse" name = "userResponses"></div>
+<script>
+//Gets the user's responses
+  function getResponses() {
+    document.getElementById("usersResponse").innerHTML = ""; //Blank space for displaying the response.
+
+    var response = document.getElementsByTagName('input'); //Gathers elements with input tag
+
+    for(var r=0; r < response.length; r++){
+
+      if(response[r].type = "radio")
+      {
+        if(response[r].checked){
+          var userResponse = response[r].value;
+
+          document.getElementById("usersResponse").innerHTML
+            += "The user's response is "+ userResponse + "<br>"
+            }
+          }
+        }
+      }
+</script>
+<br><button type="button" onclick = "getResponses()">Submit</button><br>
+   </form>
+ </div>
+
+ <div class = "links">
+ <br><p> Click here to return to the homepage: <a href="http://127.0.0.1:8000/">Homepage</a>
+      <br>Click here to go to the TMAS Form: <a href="http://127.0.0.1:8000/formpage/">TMAS Form</a></p><br>
+  </div>
+  </body>
+</html>

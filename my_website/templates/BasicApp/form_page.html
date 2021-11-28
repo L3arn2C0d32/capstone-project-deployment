@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Assessment</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    h1{
+      text-align: center;
+      font-size: 2em;
+    }
+    #TMAS_form{
+      margin: 15px;
+    }
+    .links{
+      margin: 15px;
+    }
+  </style>
+  <h1>TMAS Assessment</h1>
+  <body>
+    <div id = "TMAS_form">
+    <form method="POST" name = "userForm">
+      {{form.as_p}}
+      {% csrf_token %}
+  <p>The statements below inquire about your behavior and emotions. Consider each statement carefully.
+     Then indicate whether the statements are generally true or false for you.</p>
+
+
+     <div class="questionnaire" id = "s1">
+     1. I do not tire quickly.
+     						<input type="radio" id = "option_1"	name="s1"  value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_2" name="s1"  value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s2">
+     2. I am troubled by attacks of nausea.
+     						<input type="radio" id = "option_3" name="s2"  value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_4" name="s2" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s3">
+     3. I believe I am no more nervous than most others.
+     						<input type="radio" id = "option_5" name="s3" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_6" name="s3" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s4">
+     4. I have very few headaches.
+     						<input type="radio" id = "option_7" name="s4" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_8" name="s4" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s5">
+     5. I work under a great deal of tension.
+     						<input type="radio" id = "option_9" name="s5" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_10" name="s5" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s6">
+     6. I cannot keep my mind on one thing.
+     						<input type="radio" id = "option_11" name="s6" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_12" name="s6" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s7">
+     7. I worry over money and business.
+     						<input type="radio" id = "option_13" name="s7" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_14" name="s7" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s8">
+     8. I frequently notice my hand shakes when I try to do something.
+     						<input type="radio" id = "option_15" name="s8" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_16" name="s8" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s9">
+     9. I blush no more often than others.
+     						<input type="radio" id = "option_17" name="s9" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_18" name="s9" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s10">
+     10. I have diarreha once a month or more.
+     						<input type="radio" id = "option_19" name="s10" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_20" name="s10" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s11">
+     11. I worry quite a bit over possible misfortunes.
+     						<input type="radio" id = "option_21" name="s11" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_22" name="s11" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s12">
+     12. I practically never blush.
+     						<input type="radio" id = "option_23" name="s12" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_24" name="s12" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s13">
+     13. I am often afraid that I am going to blush.
+     						<input type="radio" id = "option_25" name="s13" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_26" name="s13" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s14">
+     14. I have nightmares every few nights.
+     						<input type="radio" id = "option_27" name="s14" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_28" name="s14" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s15">
+     15. My hands and feet are usually warm.
+     						<input type="radio" id = "option_29" name="s15" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_30" name="s15" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s16">
+     16. I sweat very easily even on cool days.
+     						<input type="radio" id = "option_31" name="s16" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_32" name="s16" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s17">
+     17. Sometimes when embarassed, I break out in a sweat.
+     						<input type="radio" id = "option_33" name="s17" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_34" name="s17" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s18">
+     18. I hardly ever notice my heart pounding, and I am seldom short of breath.
+     						<input type="radio" id = "option_35" name="s18" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_36" name="s18" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s19">
+     19. I feel hungry almost all the time.
+     						<input type="radio" id = "option_37" name="s19" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_38" name="s19" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s20">
+     20. I am very seldom troubled by constipation.
+     						<input type="radio" id = "option_39" name="s20" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_40" name="s20" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s21">
+     21. I have a great deal of stomach trouble.
+     						<input type="radio" id = "option_41" name="s21" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_42" name="s21" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s22">
+     22. I wish I could be as happy as others seem to be.
+     						<input type="radio" id = "option_43" name="s22" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_44" name="s22" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s23">
+     23. I am usually calm and not easily upset.
+     						<input type="radio" id = "option_45" name="s23" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_46" name="s23" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s24">
+     24. I feel anixety about something or someone almost all of the time.
+     						<input type="radio" id = "option_47" name="s24" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_48" name="s24" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s25">
+     25. I am happy most of the time.
+     						<input type="radio" id = "option_49" name="s25" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_50" name="s25" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s26">
+     26. It makes me nervous to have to wait.
+     						<input type="radio" id = "option_51" name="s26" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_52" name="s26" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s27">
+     27. Sometimes I become so excited I find it hard to get to sleep.
+     						<input type="radio" id = "option_53" name="s27" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_54" name="s27" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s28">
+     28. I have sometimes felt that difficulties piling up so high that I couldn't get over them.
+     						<input type="radio" id = "option_55" name="s28" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_56" name="s28" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s29">
+     29. I admit I have felt worried beyond reason over small things.
+     						<input type="radio" id = "option_57" name="s29" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_58" name="s29" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s30">
+     30. I have very few fears compared to my friends.
+     						<input type="radio" id = "option_59" name="s30" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_60" name="s30" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s31">
+     31. I certaintly feel useless at times.
+     						<input type="radio" id = "option_61" name="s31" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_62" name="s31" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s32">
+     32. I find it hard to keep my mind on a task or job.
+     						<input type="radio" id = "option_63" name="s32" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_64" name="s32" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s33">
+     33. I am usually self-conscious.
+     						<input type="radio" id = "option_65" name="s33" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_66" name="s33" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s34">
+     34. I am inclined to take things hard.
+     						<input type="radio" id = "option_67" name="s34" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_68" name="s34" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s35">
+     35. At times I think I am no good at all.
+     						<input type="radio" id = "option_69" name="s35" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_70" name="s35" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s36">
+     36. I am certaintly lacking in self-confidence.
+     						<input type="radio" id = "option_71" name="s36" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_72" name="s36" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s37">
+     37. I sometimes feel that I am about to go to pieces.
+     						<input type="radio" id = "option_73" name="s37" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_74" name="s37" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s38">
+     38. I am entirely self-confident.
+     						<input type="radio" id = "option_75" name="s38" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_76" name="s38" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s39">
+     39. I have been afraid of things or people that I know could not hurt me.
+     						<input type="radio" id = "option_77" name="s39" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_78" name="s39" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s40">
+     40. I certainly feel useless at times.
+     						<input type="radio" id = "option_79" name="s40" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_80" name="s40" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s41">
+     41. I find it hard to keep my mind on a task or job.
+     						<input type="radio" id = "option_81" name="s41" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_82" name="s41" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s42">
+     42. I am usually self-conscious.
+     						<input type="radio" id = "option_83" name="s42" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_84" name="s42" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s43">
+     43. I am inclined to take things hard.
+     						<input type="radio" id = "option_85" name="s43" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_86" name="s43" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s44">
+     44. I am a high-strung person.
+     						<input type="radio" id = "option_87" name="s44" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_88" name="s44" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s45">
+     45. Life is a trial for me much of the time.
+     						<input type="radio" id = "option_89"  name="s45" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_90" name="s45" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s46">
+     46. At time I think I am no good at all.
+     						<input type="radio" id = "option_91" name="s46" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_92" name="s46" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s47">
+     47. I am certainly lacking in self-confidence.
+     						<input type="radio" id = "option_93" name="s47" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_94" name="s47" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s48">
+     48. I sometimes feel that I am about to go to pieces.
+     						<input type="radio" id = "option_95" name="s48" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_96" name="s48" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+
+     <div class="questionnaire" id = "s49">
+     49. I shrink from facing crisis of difficulty.
+     						<input type="radio" id = "option_97" name="s49" value="1">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_98" name="s49" value="0">
+     						<label for "disagree"> False</label><br>
+     </div>
+     <div class="questionnaire" id = "s50">
+     50. I am entirely self-confident.
+     						<input type="radio" id = "option_99" name="s50" value="0">
+     						<label for "agree"> True</label>
+     						<input type="radio" id = "option_100" name="s50" value="1">
+     						<label for "disagree"> False</label><br>
+     </div>
+  <div id = "score" name = "userScore"></div>
+<script>
+
+  	//Calculates the score based on the responses from the form.
+  	function calculateScore() {
+  		document.getElementById("score").innerHTML = ""; //Blank space for displaying the score.
+
+  		var statements = document.getElementsByTagName('input'); //Gathers elements with input tag
+
+  		var finalScore = 0; //established variable for where the final score will be stored
+
+  		//Checks each input element to see if it is a radio type and checked and then adds value to score
+  		for(var i=0; i < statements.length; i++){
+
+  			if(statements[i].type = "radio") {
+
+  				if(statements[i].checked){
+  					var x = statements[i].value;
+  					var xInt = parseInt(x);    //converts values from string to corresponding integer
+  						finalScore = finalScore + xInt; //adds each checked value to score
+  						}
+  					}
+  			}
+
+            document.getElementById("score").innerHTML
+  						+= "Your score is "+ finalScore + "</br>"
+
+
+  		}
+
+  </script>
+  <br><button type="button" onclick = "calculateScore()">Submit </button><br>
+
+</br><p>If your score is above 25, you should talk with your healthcare professional. </br>
+  Scores above this threshold could indicate risk for Generalized Anxiety Disorder (GAD).</br></p>
+  </form>
+</div>
+
+<div class = "links">
+<br><p> Click here to return to the homepage: <a href="http://127.0.0.1:8000/">Homepage</a>
+    <br>Click here to go to the GAD Form: <a href="http://127.0.0.1:8000/gadassessment/">GAD Form</a></p><br>
+</div>
+
+  </body>
+</html>
